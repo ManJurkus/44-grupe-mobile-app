@@ -30,27 +30,16 @@ function App() {
       pathName: '/feature3',
     }
   ];
-  function featurePathCreator(){
-
-    return dataFeature.length
-  }
-
-  console.log(featurePathCreator());
   
- 
 
+console.log(dataFeature);
 
   return (
     <div className={style.app}>
       <BrowserRouter>
         <Routes>
-        {/* { dataCards.map(cardObj => <Card key={cardObj.id} dataCards={cardObj} />) } */}
-        {dataFeature.map(dataObj => <Route path={dataObj.pathName} element= {dataFeature.map(data => <Feature dataFeature={data} buttonTo={data.buttonTo} buttonTitle={data.buttonTitle} title={data.title} text={data.text} />)} />)}
-        
           <Route index path="/" element={ <Home />} />
-          <Route  path="/feature1" element={ <Feature dataFeature={dataFeature} buttonTo="/feature2" buttonTitle="Continue" title='Feature-1' text='Lorem ipsum dolor sit, amet consectetur adipisicing.' />} />
-          <Route  path="/feature2" element={ <Feature dataFeature={dataFeature} buttonTo="/feature3" buttonTitle="Continue" title='Feature-2' text='Lorem ipsum dolor sit, amet consectetur adipisicing.' />} />
-          <Route  path="/feature3" element={ <Feature dataFeature={dataFeature} buttonTo="/" buttonTitle="Register" title='Feature-3' text='Lorem ipsum dolor sit, amet consectetur adipisicing.' />} />
+          ({dataFeature.map(dataObj => <Route key={dataObj.id} path={dataObj.pathName} element= {<Feature data={dataObj}/>} />) })
         </Routes>
       </BrowserRouter>
 
