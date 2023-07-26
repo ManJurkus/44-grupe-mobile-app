@@ -2,6 +2,12 @@ import style from './App.module.css';
 import { Home } from './pages/Home';
 import { Feature } from "./pages/Feature";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { GiStrongMan } from 'react-icons/gi';
+import { GiBrain } from 'react-icons/gi';
+import { FaTransgender } from 'react-icons/fa';
+
+
+
 
 function App() {
   const dataFeature = [
@@ -12,6 +18,7 @@ function App() {
       buttonTitle: 'Continue',
       buttonTo: '/feature2',
       pathName: '/feature1',
+      icon: <GiStrongMan />,
     },
     {
       id:2,
@@ -20,6 +27,7 @@ function App() {
       buttonTitle: 'Continue',
       buttonTo: '/feature3',
       pathName: '/feature2',
+      icon: <GiBrain />,
     },
     {
       id:3,
@@ -28,18 +36,26 @@ function App() {
       buttonTitle: 'Register',
       buttonTo: '/',
       pathName: '/feature3',
+      icon: <FaTransgender />,
+
     }
   ];
-  
+    let dataFeatureLength = dataFeature.length;
 
-console.log(dataFeature);
+    function bubbleAll({dataFeature}) {
+      const bubbleDiv = {dataFeature.map((item, index) => <BiCircle key={index} />)};
+      console.log(bubbleDiv);
+      return <div className={style.bubble} >{bubbleDiv}</div>;
+    }
+
+    console.log();
 
   return (
     <div className={style.app}>
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={ <Home />} />
-          ({dataFeature.map(dataObj => <Route key={dataObj.id} path={dataObj.pathName} element= {<Feature data={dataObj}/>} />) })
+          ({dataFeature.map(dataObj => <Route key={dataObj.id} path={dataObj.pathName} element= {<Feature dataFeatureLength={dataFeatureLength} data={dataObj}/>} />) })
         </Routes>
       </BrowserRouter>
 
