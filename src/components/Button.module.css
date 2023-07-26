@@ -6,6 +6,9 @@
     font-weight: bold;
     font-size: 20px;
     background-color: lightskyblue;
+    min-width: 130px;
+    text-decoration: none;
+    text-align: center;
 }
 
 .button:hover {

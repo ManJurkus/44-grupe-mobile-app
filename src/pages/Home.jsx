@@ -6,7 +6,7 @@ export function Home() {
         <div className={style.homePage}>
           <img className={style.logo} src='./img/logo.jpg' alt='Logo' />
           <h1>Want to meet Simas?</h1>
-          <Button title="Get started"/>
+          <Button buttonTo="/feature1 "title="Get started"/>
         </div>
     );
   }

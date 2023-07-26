@@ -1,14 +1,19 @@
 import { Button } from '../components/Button';
 import style from './Feature.module.css';
-// import { BiCircle } from 'react-icons/bi';
+import { BiCircle } from 'react-icons/bi';
 
 
-export function Feature({data}) {
+export function Feature({data, dataFeatureLength}) {
 
-  console.log(data);
+  console.log(dataFeatureLength);
 
-    // function bubbleAll() {
-    //   const bubbleDiv = dataFeature.map((item, index) => <BiCircle key={index} />);
+    // function bubbleAll({data}) {
+    //   const bubbleDiv = data.map((item, index) => <BiCircle key={index} />);
+    //   console.log(bubbleDiv);
+    //   return <div className={style.bubble} >{bubbleDiv}</div>;
+    // }
+    // function bubbleAll({dataFeatureLength}) {
+    //   const bubbleDiv = (<BiCircle />);
     //   console.log(bubbleDiv);
     //   return <div className={style.bubble} >{bubbleDiv}</div>;
     // }
@@ -18,10 +23,15 @@ export function Feature({data}) {
 
     return (
         <div className={style.featurePage}>
-          <img className={style.img} src='./img/log.jpg' alt='Imagine' />
+          <div >{data.icon}</div>
           <h2>{data.title}</h2>
           <p>{data.text}</p>
-          {/* {bubbleAll()} */}
+          <div className={style.bubble}>
+          <BiCircle />
+          <BiCircle />
+          <BiCircle />
+
+          </div>
           <Button buttonTo={data.buttonTo} title={data.buttonTitle} />
         </div>
     );

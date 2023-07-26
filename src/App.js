@@ -5,9 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GiStrongMan } from 'react-icons/gi';
 import { GiBrain } from 'react-icons/gi';
 import { FaTransgender } from 'react-icons/fa';
-
-
-
+import { Register } from './pages/Register';
 
 function App() {
   const dataFeature = [
@@ -40,22 +38,14 @@ function App() {
 
     }
   ];
-    let dataFeatureLength = dataFeature.length;
-
-    function bubbleAll({dataFeature}) {
-      const bubbleDiv = {dataFeature.map((item, index) => <BiCircle key={index} />)};
-      console.log(bubbleDiv);
-      return <div className={style.bubble} >{bubbleDiv}</div>;
-    }
-
-    console.log();
 
   return (
     <div className={style.app}>
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={ <Home />} />
-          ({dataFeature.map(dataObj => <Route key={dataObj.id} path={dataObj.pathName} element= {<Feature dataFeatureLength={dataFeatureLength} data={dataObj}/>} />) })
+          ({dataFeature.map(dataObj => <Route key={dataObj.id} path={dataObj.pathName} element= {<Feature data={dataObj}/>} />) })
+          <Route path="/register" element={ <Register />} />
         </Routes>
       </BrowserRouter>
 
