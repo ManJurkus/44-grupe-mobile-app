@@ -3,10 +3,10 @@ import style from './Feature.module.css';
 import { BiCircle } from 'react-icons/bi';
 
 
-export function Feature({title, text, dataFeature, buttonTitle}) {
+export function Feature({title, text, dataFeature, buttonTitle, buttonTo}) {
 
     function bubbleAll() {
-      const bubbleDiv = dataFeature.map((item, index) => <BiCircle key={index} className={isCurrentPage ? style.greenBubble : ''} />);
+      const bubbleDiv = dataFeature.map((item, index) => <BiCircle key={index} />);
       console.log(bubbleDiv);
       return <div className={style.bubble} >{bubbleDiv}</div>;
     }
@@ -20,7 +20,7 @@ export function Feature({title, text, dataFeature, buttonTitle}) {
           <h2>{title}</h2>
           <p>{text}</p>
           {bubbleAll()}
-          <Button title={buttonTitle} />
+          <Button buttonTo={buttonTo} title={buttonTitle} />
         </div>
     );
   }

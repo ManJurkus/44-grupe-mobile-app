@@ -1,7 +1,8 @@
 import style from './Button.module.css';
+import { Link } from 'react-router-dom';
 
-export function Button({title}) {
+export function Button({title, buttonTo}) {
     return (
-            <button className={style.button} href="#">{title}</button>
+            <Link className={style.button} to={buttonTo}>{title}</Link>
     );
   }
