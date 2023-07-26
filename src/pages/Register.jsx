@@ -28,9 +28,16 @@ export function Register() {
             <div className={style.row}>
                 <input id='password' type='text' placeholder='Password' />
             </div>
+            <div className={style.checkboxStyle}>
+                <input type="checkbox" id="checkbox"></input>
+                    <label for="checkbox">Agree to our TOS</label>
+                
+            </div>
+            
           </form>
           
           <Button buttonTo="/feature1 "title="Register"/>
+          <p>or</p>
           <Button buttonTo="/feature1 "title="Login"/>
         </div>
     );

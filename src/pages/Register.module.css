@@ -1,7 +1,26 @@
 .registerPage{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
 
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row{
+    font-size: 16px;
+    height: 35px;
+    min-width: 220px;
+    border-radius: 5px;
+}
+
+.checkboxStyle {
+    width: 0px;
+    display: flex;
+    flex-direction: row;
 }
