@@ -26,11 +26,11 @@ export function Register() {
                 <input onChange={updateEmail} value={email} id='email' type='text' placeholder='Email' />
             </div>
             <div className={style.row}>
-                <input id='password' type='text' placeholder='Password' />
+                <input id='password' type='password' placeholder='Password' />
             </div>
             <div className={style.checkboxStyle}>
                 <input type="checkbox" id="checkbox"></input>
-                    <label for="checkbox">Agree to our TOS</label>
+                    <label for="checkbox">Agree to our TOS <link rel="stylesheet" href="" />(read)</label>
                 
             </div>
             
