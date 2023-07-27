@@ -6,6 +6,7 @@ import { GiStrongMan } from 'react-icons/gi';
 import { GiBrain } from 'react-icons/gi';
 import { FaTransgender } from 'react-icons/fa';
 import { Register } from './pages/Register';
+import { Login } from './pages/Login';
 
 function App() {
   const dataFeature = [
@@ -15,6 +16,7 @@ function App() {
       text: 'Feature-1 Lorem ipsum dolor sit, amet consectetur adipisicing.',
       buttonTitle: 'Continue',
       buttonTo: '/feature2',
+      buttonType: 'text',
       pathName: '/feature1',
       icon: <GiStrongMan />,
     },
@@ -24,6 +26,7 @@ function App() {
       text: 'Feature-2 Lorem ipsum dolor sit, amet consectetur adipisicing.',
       buttonTitle: 'Continue',
       buttonTo: '/feature3',
+      buttonType: 'text',
       pathName: '/feature2',
       icon: <GiBrain />,
     },
@@ -32,7 +35,8 @@ function App() {
       title:'Feature-3',
       text: 'Feature-3 Lorem ipsum dolor sit, amet consectetur adipisicing.',
       buttonTitle: 'Register',
-      buttonTo: '/',
+      buttonTo: '/register',
+      buttonType: 'text',
       pathName: '/feature3',
       icon: <FaTransgender />,
 
@@ -46,6 +50,7 @@ function App() {
           <Route index path="/" element={ <Home />} />
           ({dataFeature.map(dataObj => <Route key={dataObj.id} path={dataObj.pathName} element= {<Feature data={dataObj}/>} />) })
           <Route path="/register" element={ <Register />} />
+          <Route path="/login" element={ <Login /> } />
         </Routes>
       </BrowserRouter>
 
