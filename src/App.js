@@ -7,38 +7,39 @@ import { GiBrain } from 'react-icons/gi';
 import { FaTransgender } from 'react-icons/fa';
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
+import { Content } from './pages/Content';
 
 function App() {
   const dataFeature = [
     {
       id:1,
-      title:'Feature-1',
-      text: 'Feature-1 Lorem ipsum dolor sit, amet consectetur adipisicing.',
+      title:'Simas is Winer',
+      text: 'Winer winer chiken dinner',
       buttonTitle: 'Continue',
       buttonTo: '/feature2',
       buttonType: 'text',
       pathName: '/feature1',
-      icon: <GiStrongMan />,
+      icon: 'mentor4.JPG',
     },
     {
       id:2,
-      title:'Feature-2',
-      text: 'Feature-2 Lorem ipsum dolor sit, amet consectetur adipisicing.',
+      title:'Simas like to SLEEP',
+      text: 'He dreams of starting an Olympic napping team!',
       buttonTitle: 'Continue',
       buttonTo: '/feature3',
       buttonType: 'text',
       pathName: '/feature2',
-      icon: <GiBrain />,
+      icon: 'mentor3.jpg',
     },
     {
       id:3,
-      title:'Feature-3',
-      text: 'Feature-3 Lorem ipsum dolor sit, amet consectetur adipisicing.',
+      title:'Simas have a good HAIRCUT',
+      text: 'For stong MAN not a problem be bold',
       buttonTitle: 'Register',
       buttonTo: '/register',
       buttonType: 'text',
       pathName: '/feature3',
-      icon: <FaTransgender />,
+      icon: 'mentor1.JPG'
 
     }
   ];
@@ -51,6 +52,7 @@ function App() {
           ({dataFeature.map(dataObj => <Route key={dataObj.id} path={dataObj.pathName} element= {<Feature data={dataObj}/>} />) })
           <Route path="/register" element={ <Register />} />
           <Route path="/login" element={ <Login /> } />
+          <Route path="/content" element={ <Content /> } />
         </Routes>
       </BrowserRouter>
 
