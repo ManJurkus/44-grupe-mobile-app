@@ -2,7 +2,7 @@
 .featurePage{
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 25px;
     align-items: center;
 }
 
@@ -10,7 +10,7 @@
     border: 1px solid black;
     border-radius: 10px;
     max-width: 400px;
-    width: 100%;
+    width: 50%;
    
 }
 
