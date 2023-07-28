@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 30px;
     align-items: center;
-
 }
 
 .form {
@@ -37,6 +36,7 @@ label {
     border: 0.1rem solid #f00;
     background-color: #fcc;
 }
+
 .error.show {
     display: flex;
     flex-direction: column;

@@ -16,7 +16,6 @@ export function Register() {
         localStorage.setItem('users', JSON.stringify(users));
     }, [users]);
 
-
     function updateName(event) {
         setName(event.target.value);
     }
@@ -62,20 +61,15 @@ export function Register() {
             newErrors.push('klaida: taisykles...');
         }
         
-        console.log(users.filter(x => x.name === name).length);
-
-        
         if(users.filter(x => x.name === name).length > 0 || users.filter(x => x.email === email).length > 0)  {
             newErrors.push('klaida: Vartotojo vardas arba email uzregistuotas');
         }
 
         setErrors(newErrors);
 
-
         if (!newErrors.length) {
             updateIsRegistred()
             setUsers((prev) => [...prev, { name, email, password }]);
-
         }
     }
 
@@ -91,28 +85,26 @@ export function Register() {
                <p>Vartotojas Sekmingai uzregistruotas</p>
             </div>
 
-          <form className={style.form}>
-            <div className={style.row}>
-                <input onChange={updateName} value={name} id='name' type='text' placeholder='Name' />
-            </div>
-            <div className={style.row}>
-                <input onChange={updateEmail} value={email} id='email' type='text' placeholder='Email' />
-            </div>
-            <div className={style.row}>
-                <input onChange={updatePassword} value={password} id='password' type='password' placeholder='Password' />
-            </div>
-            <div className={style.checkboxStyle}>
-                <input onChange={updateCheck} type="checkbox" id="checkbox"></input>
+            <form className={style.form}>
+                <div className={style.row}>
+                    <input onChange={updateName} value={name} id='name' type='text' placeholder='Name' />
+                </div>
+                <div className={style.row}>
+                    <input onChange={updateEmail} value={email} id='email' type='text' placeholder='Email' />
+                </div>
+                <div className={style.row}>
+                    <input onChange={updatePassword} value={password} id='password' type='password' placeholder='Password' />
+                </div>
+                <div className={style.checkboxStyle}>
+                    <input onChange={updateCheck} type="checkbox" id="checkbox"></input>
                     <label htmlFor="checkbox">Agree to our TOS <link rel="stylesheet" />(read)</label>
                 
-            </div>
-            
-          </form>
-          {/* buttonTo="/feature1" */}
-          <button onClick={registerUser} type="submit" className={button.button} >Register</button>
-          <p>or</p>
-          <Button buttonTo="/login" title="Login"/>
+                </div>
+            </form>
+
+            <button onClick={registerUser} type="submit" className={button.button} >Register</button>
+            <p>or</p>
+            <Button buttonTo="/login" title="Login"/>
         </div>
     );
   }
-  

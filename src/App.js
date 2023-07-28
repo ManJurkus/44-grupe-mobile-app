@@ -2,9 +2,6 @@ import style from './App.module.css';
 import { Home } from './pages/Home';
 import { Feature } from "./pages/Feature";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { GiStrongMan } from 'react-icons/gi';
-import { GiBrain } from 'react-icons/gi';
-import { FaTransgender } from 'react-icons/fa';
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
 import { Content } from './pages/Content';
@@ -55,8 +52,6 @@ function App() {
           <Route path="/content" element={ <Content /> } />
         </Routes>
       </BrowserRouter>
-
- 
     </div>
   );
 }

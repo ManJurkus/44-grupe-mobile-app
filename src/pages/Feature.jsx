@@ -2,24 +2,7 @@ import { Button } from '../components/Button';
 import style from './Feature.module.css';
 import { BiCircle } from 'react-icons/bi';
 
-
-export function Feature({data, dataFeatureLength}) {
-
-  console.log(dataFeatureLength);
-
-    // function bubbleAll({data}) {
-    //   const bubbleDiv = data.map((item, index) => <BiCircle key={index} />);
-    //   console.log(bubbleDiv);
-    //   return <div className={style.bubble} >{bubbleDiv}</div>;
-    // }
-    // function bubbleAll({dataFeatureLength}) {
-    //   const bubbleDiv = (<BiCircle />);
-    //   console.log(bubbleDiv);
-    //   return <div className={style.bubble} >{bubbleDiv}</div>;
-    // }
-  
-
-  
+export function Feature({data}) {
 
     return (
         <div className={style.featurePage}>
@@ -37,5 +20,3 @@ export function Feature({data, dataFeatureLength}) {
         </div>
     );
   }
-
-
