@@ -1,0 +1,21 @@
+
+.contentPage{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+}
+
+.img {
+    border: 1px solid black;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+   
+}
+
+.bubble {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
