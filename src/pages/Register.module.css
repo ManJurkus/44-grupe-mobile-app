@@ -42,3 +42,18 @@ label {
     flex-direction: column;
     gap: 5px;
 }
+
+.registerSucsesful {
+    display: none;
+    width: 70%;
+    padding: 10px;
+    font-size: 14px;
+    border: 0.1rem solid green;
+    background-color: rgb(126, 221, 114);
+}
+
+.registerSucsesful.showw {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

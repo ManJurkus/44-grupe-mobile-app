@@ -10,6 +10,7 @@ export function Register() {
     const [check, setCheck] = useState(false);
     const [errors, setErrors] = useState([]);
     const [users, setUsers] = useState(() => JSON.parse(localStorage.getItem('users')) || []);
+    const [isRegistred, setIsRegistred] = useState(false);
 
     useEffect(() => {
         localStorage.setItem('users', JSON.stringify(users));
@@ -32,6 +33,10 @@ export function Register() {
         setCheck(!check);
     }
 
+    function updateIsRegistred() {
+        setIsRegistred(!isRegistred);
+    }
+
     function registerUser(event) {
         const minUsernameLength = 3;
         const maxUsernameLength = 20;
@@ -39,6 +44,7 @@ export function Register() {
         const maxPasswordLength = 100;
         event.preventDefault();
         const newErrors = [];
+        
 
         if (name.length < minUsernameLength || name.length > maxUsernameLength) {
             newErrors.push('klaida: name...');
@@ -55,13 +61,21 @@ export function Register() {
         if ( check === false ) {
             newErrors.push('klaida: taisykles...');
         }
-        console.log({newErrors});
+        
+        console.log(users.filter(x => x.name === name).length);
+
+        
+        if(users.filter(x => x.name === name).length > 0 || users.filter(x => x.email === email).length > 0)  {
+            newErrors.push('klaida: Vartotojo vardas arba email uzregistuotas');
+        }
 
         setErrors(newErrors);
 
-        if (!errors.length) {
-            
+
+        if (!newErrors.length) {
+            updateIsRegistred()
             setUsers((prev) => [...prev, { name, email, password }]);
+
         }
     }
 
@@ -69,10 +83,14 @@ export function Register() {
 
     return (
         <div className={style.registerPage}>
-          <h2>Create your account</h2>
-          <div className={`${style.error} ${errors.length ? style.show : ''}`}>
-            {errors.map(err => <p>{err}</p>)}
+            <h2>Create your account ({users.length})</h2>
+            <div className={`${style.error} ${errors.length ? style.show : ''}`}>
+                {errors.map(err => <p key={name}>{err}</p>)}
             </div>
+            <div className={`${style.registerSucsesful} ${ isRegistred ? style.showw : ''}`}>
+               <p>Vartotojas Sekmingai uzregistruotas</p>
+            </div>
+
           <form className={style.form}>
             <div className={style.row}>
                 <input onChange={updateName} value={name} id='name' type='text' placeholder='Name' />
