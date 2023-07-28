@@ -28,3 +28,17 @@
 label {
     font-size: 14px;
 }
+
+.error {
+    display: none;
+    width: 70%;
+    padding: 10px;
+    font-size: 14px;
+    border: 0.1rem solid #f00;
+    background-color: #fcc;
+}
+.error.show {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
