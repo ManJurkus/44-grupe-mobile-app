@@ -1,5 +1,6 @@
+
 .burger {
-    position: relative;
+    
 }
 .burgerMeniu {
     border: 1px solid black;
@@ -8,7 +9,10 @@
     flex-direction: column;
     display: none;
     position: absolute;
-    left: -40px;
+    width: 100%;
+    left: 0px;
+    align-items: center;
+    background-color: lightblue;
 }
 
 .burgerLink {
