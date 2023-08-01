@@ -1,0 +1,23 @@
+.burger {
+    position: relative;
+}
+.burgerMeniu {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    left: -40px;
+}
+
+.burgerLink {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+}
+
+.burgerMeniu.show {
+    display: flex;
+
+}

@@ -5,13 +5,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
 import { Content } from './pages/Content';
+import { Page404 } from './pages/Page404';
 
 function App() {
   const dataFeature = [
     {
       id:1,
-      title:'Simas is Winer',
-      text: 'Winer winer chiken dinner',
+      title:'Simas is a Winner',
+      text: 'Winner winner chiken dinner',
       buttonTitle: 'Continue',
       buttonTo: '/feature2',
       buttonType: 'text',
@@ -50,6 +51,7 @@ function App() {
           <Route path="/register" element={ <Register />} />
           <Route path="/login" element={ <Login /> } />
           <Route path="/content" element={ <Content /> } />
+          <Route path="*" element= { <Page404 />} />
         </Routes>
       </BrowserRouter>
     </div>
